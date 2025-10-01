@@ -1,0 +1,104 @@
+<!-- exercice-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <div class ="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type ="text/babel">
+const rootElement = document.querySelector('.root')
+
+const fullname= "Anamika kumari"
+const country="india"
+const title="react.js"
+const gender="female"
+const email="24r21a67d2@mlrit.ac.in"
+const phoneno="8686735562"
+const header=(
+    <header     style={{ border: '20px solid pink', color: 'black', fontSize: '18px' }}
+>
+        <div className='header-wrapper'>
+            <h1>{fullname}</h1>
+            <p>
+            country:{country}
+            <br/>
+            title:{title}
+            <br/>
+            gender:{gender}
+            <br/>
+            email:{email}
+            <br/>
+            phone no:{phoneno}
+            <br/>
+
+            </p>
+          </div>
+
+</header>
+)
+      const numOne = 25 
+      const numTwo = 2000
+
+      const result = (
+        <p>
+          {numOne} + {numTwo} = {numOne + numTwo}
+        </p>
+      )
+
+      const yearBorn = 1820
+      const currentYear = 2020
+      const age = currentYear - yearBorn
+      
+
+      // JSX element, main
+      const techs = ['HTML', 'CSS', 'JavaScript']
+      const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
+
+      // JSX element, main
+      const main = (
+        <main style={{backgroundColor:'orange',border:'5px solid red ',padding:"20 px",color:"green"}}>
+          <div className='main-wrapper'>
+            <p>
+              Prerequisite to get started{' '}
+              <strong>
+                <em>react.js</em>
+              </strong>
+              :
+            </p>
+            <ul>{techsFormatted}</ul>
+            {result}          </div>
+        </main>
+      )
+const footer=(
+    <footer>
+        <div className='footer-wrapper'>
+            <p> copyright 2025</p>
+            </div>
+        </footer>
+    )
+      const app = (
+        <div className='app'>
+          {header}
+          {main}
+          {footer}
+        </div>
+      )
+
+      ReactDOM.render(app, rootElement)
+
+    </script>
+ </body>
+ </html>
