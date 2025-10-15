@@ -1,8 +1,8 @@
 console.log('hello world !');
 // cretation of variables
-let name="anamika";
-name="anamika";
-const PI=3.14;// const value cannot be updated or assigned a new value 
+// let name = "anamika";
+// name = "anamika";
+// const PI = 3.14; // const value cannot be updated or assigned a new value
 //array
 const arr = ["anamika",250,true,{city:"delhi",country:"india"},{skill:["python","js","c++"]}];
 console.log(arr);
@@ -10,7 +10,7 @@ const numbers=[0,37,98.6,3.14,9.81,100]
 const fruit=["apple","mango","banana","orange","grapes"]
 const countries=["india","usa","uk","russia","china"]
 const mixed=[1,2,3,"anamika",true,3.14]
-console .log ("numbers:",numbers);
+console.log("numbers:", numbers);
 console.log("fruit:",fruit);
 console.log("countries:",countries);
 console.log("mixed:",mixed);
@@ -37,7 +37,7 @@ console.log(fruit[fruit.length-1])
 console.log(numbers[numbers.length-1]);
 //modfiying array element
 const countries1 = ['Albania','Bolivia','Canada','Denmark','Ethiopia','Finland','Germany','Hungary','Ireland','Japan','Kenya']
-countries [0]="afghanistan";
+countries[0] = "afghanistan";
 let lastIndex=countries.length-1;
 countries[lastIndex]="srilanka";
 console.log(countries);
@@ -55,17 +55,16 @@ console.log(countries.length);
 console.log(numbers.indexOf(3.14));
 console.log(numbers.indexOf(0));
  // if else statments 
- let index =countries1.indexOf("ethiopia");
- if (index!=-1){
-    console.log("ethiopia is found in the list");
- } else {
-    console.log("ethiopia is not found in the list");
-
- }
- //ternary operator
- index !=-1 
- ?console.log("ethiopia is found in the list")
- :console.log("ethiopia is not found in the list");
+let index = countries1.indexOf("ethiopia");
+if (index !== -1) {
+  console.log("ethiopia is found in the list");
+} else {
+  console.log("ethiopia is not found in the list");
+}
+//ternary operator
+index !== -1
+  ? console.log("ethiopia is found in the list")
+  : console.log("ethiopia is not found in the list");
 //last index of an element in an array
    const numbers2=[1,2,3,4,5,3,6,7,8,9,3];   
    console.log(numbers2.lastIndexOf(3));
@@ -175,7 +174,7 @@ console.log(sum)
 
 let total = 0
 for (let i = 0; i < 101; i++) {
-  if (i % 2 == 0) {
+  if (i % 2 === 0) {
     total += i
   }
 }
@@ -208,8 +207,7 @@ do{
       console.log(num);
    }
 //foreach loop
-  const country
-   = ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland']
+  // const country = ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland']
 countries.forEach((country, i, arr) => {
   console.log(i, country.toUpperCase())
 })
@@ -227,75 +225,74 @@ for (const key in user) {
 //Interrupting a loop and skipping an item
 //break 
 for (let i=0;i<=5;i++){
-   if (i==3){
+  if (i === 3) {
       break;
    }
    console.log(i);
 }
 //continue 
 for (let i=0;i<=5;i++){
-   if (i==3){
+  if (i === 3) {
       continue;
 
    }
 }
-console.log(i);
+// console.log(i);
 //scope
 //window scope
 a="javascript"
 b=10
-function letsLearnScope(){
-   console.log(a,b);
-    if(true){
-      console.log(a,b);
-   }
-}
-console.log(a,b);
+// function letsLearnScope() {
+//   console.log(a, b);
+//   if (true) {
+//     console.log(a, b);
+//   }
+// }
+// console.log(a, b);
 //global scope
 let x="javascript"
 let y=10
-function letsLearnScope(){
-   console.log(a,b);
-    if(true){
-      x='python'
-      y=20
-      console.log(x,y);
-   }
-   console.log(x,y);
+// global scope example
+function letsLearnScopeGlobal(){
+  console.log(x, y); // uses global x and y
+  if(true){
+    x = 'python'; // modifies global x
+    y = 20;       // modifies global y
+    console.log(x, y);
+  }
+  console.log(x, y);
 }
-letsLearnScope();
-console.log(x,y);
-//local scope
-function letsLearnScope(){
-   console.log(x.y);
-      if(true){
-      let x='python'
-      let y=20
-      console.log(x,y);
-   }
-   console.log(x,y);
-
+letsLearnScopeGlobal();
+console.log(x, y);
+// local/block scope example
+function letsLearnScopeLocal(){
+  // x and y are not defined here
+  if(true){
+    let x = 'python';
+    let y = 20;
+    console.log(x, y); // accessible here
+  }
+  // console.log(x, y); // would cause ReferenceError
 }
-letsLearnScope();
-console.log(x,y); 
-//block scope
-//scope.js
-function letsLearnScope() {
-  var gravity = 9.81
-  console.log(gravity)
-}
-// console.log(gravity), Uncaught ReferenceError: gravity is not defined
+letsLearnScopeLocal();
+// console.log(x, y); // would cause ReferenceError
+// block scope with var
+// function letsLearnScopeBlock() {
+//   var gravity = 9.81;
+//   console.log(gravity);
+// }
+// console.log(gravity); // Uncaught ReferenceError: gravity is not defined
 
 if (true) {
-  var gravity = 9.81
-  console.log(gravity) // 9.81
+  var gravity = 9.81;
+  console.log(gravity); // 9.81
 }
-console.log(gravity) // 9.81
+console.log(gravity); // 9.81
 
 for (var i = 0; i < 3; i++) {
-  console.log(i) // 1, 2, 3
+  console.log(i); // 0, 1, 2
 }
-console.log(i)
+console.log(i); // 3
 //  object 
 const person = {
   firstName: 'Asabeneh',
@@ -348,18 +345,11 @@ const entries=Object.entries(copyperson)
 console.log(entries);// to get the keys and values in array form
 //functions
 //declaration function 
-function functionName(){
-   //function body
-}
+// function functionName() {
+//   //function body
+// }
 
-// function without parameter,  a function which make a number square
-function square() {
-  let num = 2
-  let sq = num * num
-  console.log(sq)
-}
 
-square() // 4
 
 // function without parameter
 function addTwoNumbers() {
@@ -419,16 +409,16 @@ const sumAllNumbers = (...args) => {
 console.log(sumAllNumbers(1, 2, 3, 4, 5, 6)) // 21
 console.log(sumAllNumbers(10, 20, 30)) // 60
 //anonymous function
-const anonymousFun = function () {
-  console.log(
-    'I am an anonymous function and my value is stored in anonymousFun'
-  )
-}
+// const anonymousFun = function () {
+//   console.log(
+//     'I am an anonymous function and my value is stored in anonymousFun'
+//   )
+// }
 
 //Expression Function
-const square2 = function (n) {
-  return n * n
-}  
+// const square2 = function (n) {
+//   return n * n
+// }
 //self invoking functions  
 ;(function (n) {
   console.log(n * n)
@@ -452,10 +442,10 @@ const squareArrow = (n) => {
 console.log(squareArrow(2)) // 4
  // 4
 //function with default parameters
-function greetings(name = 'Peter') {
-  let message = `${name}, welcome to 30 Days Of JavaScript!`
-  return message
-}
+// function greetings(name = 'Peter') {
+//   let message = `${name}, welcome to 30 Days Of JavaScript!`
+//   return message
+// }
 //higher order function
 //callback function 
 const callback = (n) => {
@@ -480,16 +470,16 @@ const higherOrder = n => {
 console.log(higherOrder(2)(3)(10))
 //setting time
 //set interval
-function sayHello()  {
-   console.log('hello')
-}
+// function sayHello()  {
+//   console.log('hello')
+// }
 //setInterval(sayHello,1000)// it will print hello every second
 //sethiTimeout(sayHello, 3000) // it will print hello after 2 seconds
 //clearTimeout(sayHello);
 
 // Destructuring and Spreading
 //destructuring arrays
-const numbers5 = [1, 2, 3]
+// const numbers5 = [1, 2, 3]
  const countries2 = ['Finland', 'Sweden', 'Norway']
  // accessing array items using loop
  for (const number of numbers) {
