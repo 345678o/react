@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Small preview */
+    .thumb {
+      width: 150px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    /* Overlay */
+    .overlay {
+      display: none; /* hidden by default */
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .overlay img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    }
+  </style>
+</head>
+<body>
+  <!-- Thumbnail -->
+  <img src="sdg goals.png"
+       alt="Click to view"
+       class="thumb"
+       onclick="document.getElementById('viewer').style.display='flex'">
+
+  <!-- Overlay -->
+  <div id="viewer" class="overlay" onclick="this.style.display='none'">
+    <img src="sdggoals .jpg" alt="Large View">
+  </div>
+</body>
+</html>
+
